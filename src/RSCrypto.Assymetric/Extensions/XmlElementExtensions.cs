@@ -12,17 +12,17 @@ namespace RSCrypto.Assymetric.Extensions
         {
             var text = Convert.ToBase64String(bytes);
 
-            return xmlDoc.AppendElementWithContent(root, name, text);
+            return xmlDoc.AppendElementContent(root, name, text);
         }
 
         public static XmlDocument AppendElementWithByteContent(this XmlDocument xmlDoc, XmlElement root, string name, int num)
         {
             var text = num.ToString();
 
-            return xmlDoc.AppendElementWithContent(root, name, text);
+            return xmlDoc.AppendElementContent(root, name, text);
         }
 
-        public static XmlDocument AppendElementWithContent(this XmlDocument xmlDoc, XmlElement root, string name, string  content)
+        public static XmlDocument AppendElementContent(this XmlDocument xmlDoc, XmlElement root, string name, string  content)
         {
             var textNode = xmlDoc.CreateTextNode(content);
             var element = xmlDoc.CreateElement(name);
